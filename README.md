@@ -20,5 +20,8 @@ Note: We need to install tensorflow because we’re going to run Keras on a Tens
 
 ``model = load_model('model.h5')``
 
+Accuracy without Dropout
 ![without_drop](https://github.com/Dartrisen/keras-mnist/blob/master/without_drop.png)
+
+Accuracy with Dropout
 ![with_drop](https://github.com/Dartrisen/keras-mnist/blob/master/with_drop.png)
