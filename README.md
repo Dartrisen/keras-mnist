@@ -10,7 +10,7 @@ Let’s first download some packages we’ll need:
 
 ``pip install keras tensorflow numpy matplotlib``
 
-Optional: ``pip install h5py''
+Optional: ``pip install h5py``
 
 Note: We need to install tensorflow because we’re going to run Keras on a TensorFlow backend.
 
