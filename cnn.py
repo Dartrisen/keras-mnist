@@ -23,15 +23,16 @@ y_test = to_categorical(y_test)
 model = Sequential()
 
 # add model layers
+# we could add the Dropout layer in order to prevent overfitting
 model.add(Conv2D(32, kernel_size=3, activation='relu', input_shape=(28,28,1)))
 model.add(MaxPooling2D())
-model.add(Dropout(0.25))
+#model.add(Dropout(0.25))
 model.add(Conv2D(64, kernel_size=3, activation='relu'))
 model.add(MaxPooling2D())
-model.add(Dropout(0.25))
+#model.add(Dropout(0.25))
 model.add(Conv2D(64, kernel_size=3, activation='relu'))
 model.add(Flatten())
-model.add(Dropout(0.5))
+#model.add(Dropout(0.5))
 model.add(Dense(10, activation='softmax'))
 
 # compile model using accuracy to measure model performance
@@ -42,11 +43,11 @@ model.compile(optimizer='adam',
 print(model.summary())
 
 # train the model
-history = model.fit(X_train, y_train, validation_data=(X_test, y_test), epochs=3)
+results = model.fit(X_train, y_train, validation_data=(X_test, y_test), epochs=3)
 
 # plot accuracy
-plt.plot(history.history['accuracy'], label='train')
-plt.plot(history.history['val_accuracy'], label='test')
+plt.plot(results.history['accuracy'], label='train')
+plt.plot(results.history['val_accuracy'], label='test')
 plt.legend()
 plt.show()
 
